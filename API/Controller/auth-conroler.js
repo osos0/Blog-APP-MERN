@@ -1,16 +1,20 @@
 import User from "../Schemas/UserModeel.js";
 import bcryptjs from "bcryptjs";
+import { errorHandler } from "../Utils/error.js";
 
-export const authConroller = async (req, res) => {
+export const authConroller = async (req, res, next) => {
   const { username, email, password } = req.body;
 
   if (
-    (!username && !email && !password,
-    username === "",
-    email === "",
-    password === "")
+    !username ||
+    !email ||
+    !password ||
+    username === "" ||
+    email === "" ||
+    password === ""
   ) {
-    return res.status(400).json({ message: "Please fill all fields" });
+    next(errorHandler(400, "Please fill all fields"));
+    // return res.status(400).json({ message: "Please fill all fields" });
   }
 
   const hashedPassword = await bcryptjs.hash(password, 10);
@@ -25,6 +29,6 @@ export const authConroller = async (req, res) => {
     await newUser.save();
     return res.status(201).json({ message: "User Created" });
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    next(error);
   }
 };
