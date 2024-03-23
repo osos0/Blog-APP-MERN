@@ -1,0 +1,43 @@
+@use "./Vars" as *;
+
+.SignUp {
+  padding: 40px 0;
+  .rowCon {
+    form {
+      flex-direction: column;
+      button {
+        margin: 10px 0;
+        padding: 10px 10px;
+        border-radius: 10px;
+        font-size: 22px;
+        width: 80%;
+      }
+    }
+    .firstrowCon {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .logo {
+        color: white;
+        min-width: 60%;
+        margin-right: 10px;
+        // background: linear-gradient(($pink), ($perpile));
+        background: linear-gradient(to right, $pink, $perpile);
+        padding: 10px 5px;
+        border-radius: 10px;
+      }
+    }
+    .gooleBtn {
+      width: 80%;
+      margin: 10px 10%;
+    }
+    .haveAccountCon {
+      text-align: center;
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+}

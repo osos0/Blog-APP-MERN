@@ -61,7 +61,7 @@ const Header = () => {
               </button>
             </form>
             <div className="p-2">
-              <button type="button" class="btn btn-success">
+              <button type="button" className="btn btn-success">
                 Sign in
               </button>
             </div>

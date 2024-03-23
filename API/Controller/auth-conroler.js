@@ -13,7 +13,7 @@ export const authConroller = async (req, res, next) => {
     email === "" ||
     password === ""
   ) {
-    next(errorHandler(400, "Please fill all fields"));
+    return next(errorHandler(400, "Please fill all fields"));
     // return res.status(400).json({ message: "Please fill all fields" });
   }
 
