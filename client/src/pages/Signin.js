@@ -27,7 +27,7 @@ export default function Signin() {
       setErrMessage(null);
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "http://localhost:5000/api/auth/signin",
         signinObj
       );
       if (res.data.success === false) {
