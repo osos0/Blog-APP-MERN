@@ -1,13 +1,46 @@
 import { useState } from "react";
 import React from "react";
 
-import { Link } from "react-router-dom";
+import axios from "axios";
+
+import { Link, useNavigate } from "react-router-dom";
 export default function SignUp() {
   const [signupObj, setSignupObj] = useState({});
-  console.log(signupObj);
+  const [errMessage, setErrMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handelsignvalue = (e) => {
-    setSignupObj({ ...signupObj, [e.target.id]: e.target.value });
+    setSignupObj({ ...signupObj, [e.target.id]: e.target.value.trim() });
+  };
+
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    // console.log(signupObj);
+
+    if (!signupObj.username || !signupObj.email || !signupObj.password) {
+      setErrMessage("Please fill all the fields");
+      return;
+    }
+    try {
+      setLoading(true);
+      setErrMessage(null);
+
+      const res = await axios.post(
+        "http://localhost:5000/api/auth/signup",
+        signupObj
+      );
+      if (res.data.success === false) {
+        return setErrMessage(res.data.message);
+      }
+      // alert("Account created successful");
+      setLoading(false);
+      navigate("/signin");
+    } catch (error) {
+      setErrMessage(error.message);
+      setLoading(false);
+    }
   };
 
   return (
@@ -19,9 +52,7 @@ export default function SignUp() {
             <h3>Blog</h3>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 secondrowCon">
-            <form
-            //  onSubmit={handelSubmit}
-            >
+            <form onSubmit={handelSubmit}>
               <input
                 id="username"
                 type="text"
@@ -41,7 +72,9 @@ export default function SignUp() {
                 onChange={handelsignvalue}
               />
 
-              <button type="submit">Sign Up</button>
+              <button type="submit" disabled={loading}>
+                {loading ? "Loading..." : "SIGN UP"}
+              </button>
             </form>
             <button type="submit" className="gooleBtn">
               Continue With Google
@@ -50,6 +83,7 @@ export default function SignUp() {
               <div>Have an Account</div>
               <Link to={"/login"}>Sign In</Link>
             </div>
+            {errMessage && <div className="errorMessage">{errMessage}</div>}
           </div>
         </div>
       </div>
