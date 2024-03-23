@@ -80,7 +80,7 @@ export default function SignUp() {
             </button>
             <div className="haveAccountCon">
               <div>Have an Account</div>
-              <Link to={"/login"}>Sign In</Link>
+              <Link to={"/signin"}>Sign In</Link>
             </div>
             {errMessage && <div className="errorMessage">{errMessage}</div>}
           </div>
