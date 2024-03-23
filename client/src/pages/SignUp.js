@@ -17,7 +17,6 @@ export default function SignUp() {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
-    // console.log(signupObj);
 
     if (!signupObj.username || !signupObj.email || !signupObj.password) {
       setErrMessage("Please fill all the fields");

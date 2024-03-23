@@ -45,6 +45,17 @@ a {
   font-size: 18px;
 }
 
+.logo {
+  color: white;
+  min-width: 60%;
+  margin-right: 10px;
+  // background: linear-gradient(($pink), ($perpile));
+  background: linear-gradient(to right, $pink, $perpile);
+  padding: 10px 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
 // .picPrivateProfile {
 //   max-width: 200px;
 // }

@@ -10,6 +10,7 @@ import Projects from "./pages/Projects";
 import SignUp from "./pages/SignUp";
 import Signin from "./pages/Signin";
 import Header from "./components/Header";
+import FooterCom from "./components/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <FooterCom />
     </div>
   );
 }
