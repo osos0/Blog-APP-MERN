@@ -9,6 +9,7 @@ import {
 
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import OAuth from "../components/OAuth";
 
 export default function Signin() {
   const [signinObj, setSigninObj] = useState({});
@@ -90,14 +91,15 @@ export default function Signin() {
                 {loading ? "Loading..." : "SIGN IN"}
               </button>
             </form>
-            <button type="submit" className="gooleBtn">
-              Continue With Google
-            </button>
+            <OAuth />
             <div className="haveAccountCon">
               <div>Don't Have an Account</div>
               <Link to={"/signup"}>Sign Up</Link>
             </div>
-            {errMessage && <div className="errorMessage">{errMessage}</div>}
+            {/* {errMessage && <div className="errorMessage">{errMessage}</div>} */}
+            {errMessage && (
+              <div className="errorMessage">{errMessage.toString()}</div>
+            )}
           </div>
         </div>
       </div>

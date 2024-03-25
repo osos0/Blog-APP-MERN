@@ -98,6 +98,7 @@ import React from "react";
 // import axios from "axios";
 
 import { Link, useNavigate } from "react-router-dom";
+import OAuth from "../components/OAuth";
 export default function SignUp() {
   const [signupObj, setSignupObj] = useState({});
   const [errMessage, setErrMessage] = useState(null);
@@ -174,9 +175,7 @@ export default function SignUp() {
                 {loading ? "Loading..." : "SIGN UP"}
               </button>
             </form>
-            <button type="submit" className="gooleBtn">
-              Continue With Google
-            </button>
+            <OAuth />
             <div className="haveAccountCon">
               <div>Have an Account</div>
               <Link to={"/signin"}>Sign In</Link>
