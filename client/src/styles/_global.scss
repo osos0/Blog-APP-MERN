@@ -55,7 +55,22 @@ a {
   border-radius: 10px;
   text-align: center;
 }
-
+.dark {
+  background-color: rgb(16, 23, 42);
+  min-height: 100vh;
+  color: $gray !important;
+  min-height: 100vh;
+  .nav-link {
+    color: $gray !important;
+  }
+  a {
+    color: $gray !important;
+  }
+}
+.footerBorder {
+  border: 1px solid transparent !important;
+  border-top: 1px solid rgb(198, 192, 217) !important;
+}
 // .picPrivateProfile {
 //   max-width: 200px;
 // }

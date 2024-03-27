@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function FooterCom() {
   return (
-    <footer className="container-fluid bg-light border border-t-8 border-teal-500 py-5">
+    <footer className="container-fluid footerBorder border border-t-8 border-teal-500 py-5">
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
