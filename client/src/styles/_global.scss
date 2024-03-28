@@ -80,15 +80,17 @@ a {
 //   max-width: 200px;
 // }
 
-// .conOfDeleteandLogout {
-//   color: red;
-//   font-size: 18px;
-//   margin-top: 10px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 10px 20px;
-//   span {
-//     cursor: pointer;
-//   }
-// }
+.conOfDeleteandLogout {
+  color: red;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+  span {
+    cursor: pointer;
+  }
+}
