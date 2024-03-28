@@ -67,6 +67,11 @@ a {
     color: $gray !important;
   }
 }
+
+.navbar {
+  box-shadow: 0px 10px 15px rgba(198, 192, 217, 0.5);
+}
+
 .footerBorder {
   border: 1px solid transparent !important;
   border-top: 1px solid rgb(198, 192, 217) !important;

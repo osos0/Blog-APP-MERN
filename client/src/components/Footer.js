@@ -73,12 +73,12 @@ export default function FooterCom() {
       <hr className="my-4" />
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-md-6 col-sm-12">
             <p className="text-muted mb-0">
               &copy; {new Date().getFullYear()} CHRIS Blog
             </p>
           </div>
-          <div className="col-lg-6 text-right">
+          <div className="col-lg-6 col-md-6 col-sm-12 text-right">
             <Link to="#" className="text-dark me-3">
               <FontAwesomeIcon icon={faFacebook} />
             </Link>
